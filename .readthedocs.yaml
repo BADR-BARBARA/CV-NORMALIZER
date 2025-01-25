@@ -15,8 +15,7 @@ sphinx:
   configuration: source/conf.py  # Chemin vers le fichier de configuration Sphinx
 
 # Formats de sortie de la documentation
-formats:
-  - htmlzip  # Format HTML compressé
+
 
 # Optionally, but recommended,
 # declare the Python requirements required to build your documentation
