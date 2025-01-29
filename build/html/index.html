@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>test1 documentation: &mdash; test1 01-17-2025 documentation</title>
+  <title>CV Normalizer &mdash; test1 01-17-2025 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -42,7 +42,29 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">test1 documentation:</a></li>
+<li><a class="reference internal" href="#">CV Normalizer</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#fonctionnalites">Fonctionnalités</a></li>
+<li><a class="reference internal" href="#prerequis">Prérequis</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#utilisation">Utilisation</a><ul>
+<li><a class="reference internal" href="#etape-1-telechargement-du-cv">Étape 1 : Téléchargement du CV</a></li>
+<li><a class="reference internal" href="#etape-2-extraction-et-nettoyage-du-texte">Étape 2 : Extraction et nettoyage du texte</a></li>
+<li><a class="reference internal" href="#etape-3-generation-du-json-structure">Étape 3 : Génération du JSON structuré</a></li>
+<li><a class="reference internal" href="#etape-4-generation-du-code-latex">Étape 4 : Génération du code LaTeX</a></li>
+<li><a class="reference internal" href="#etape-5-compilation-en-pdf">Étape 5 : Compilation en PDF</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#structure-du-projet">Structure du Projet</a></li>
+<li><a class="reference internal" href="#personnalisation">Personnalisation</a><ul>
+<li><a class="reference internal" href="#modifier-le-modele-latex">Modifier le modèle LaTeX</a></li>
+<li><a class="reference internal" href="#ajouter-des-sections-supplementaires">Ajouter des sections supplémentaires</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deploiement-sur-read-the-docs">Déploiement sur Read the Docs</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -59,7 +81,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">test1 documentation:</li>
+      <li class="breadcrumb-item active">CV Normalizer</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -69,13 +91,142 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="test1-documentation">
-<h1>test1 documentation:<a class="headerlink" href="#test1-documentation" title="Link to this heading"></a></h1>
-<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
-documentation for details.</p>
+  <section id="cv-normalizer">
+<h1>CV Normalizer<a class="headerlink" href="#cv-normalizer" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Le <strong>CV Normalizer</strong> est une application Streamlit qui permet aux utilisateurs de télécharger un CV au format PDF, d’en extraire le texte, de le structurer en JSON, puis de générer un CV professionnel au format PDF en utilisant un modèle LaTeX prédéfini. Ce projet utilise des technologies comme <strong>Tesseract OCR</strong> pour l’extraction de texte, <strong>LangChain</strong> pour le traitement du langage naturel, et <strong>LaTeX</strong> pour la génération de PDF.</p>
+</section>
+<section id="fonctionnalites">
+<h2>Fonctionnalités<a class="headerlink" href="#fonctionnalites" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Extraction de texte</strong> : Extraction du texte à partir d’un fichier PDF en utilisant Tesseract OCR.</p></li>
+<li><p><strong>Nettoyage de texte</strong> : Suppression des espaces inutiles, des lignes vides et normalisation du texte.</p></li>
+<li><p><strong>Structuration en JSON</strong> : Conversion du texte extrait en une structure JSON standardisée.</p></li>
+<li><p><strong>Génération de LaTeX</strong> : Utilisation d’un modèle LaTeX pour créer un CV professionnel à partir des données JSON.</p></li>
+<li><p><strong>Compilation en PDF</strong> : Compilation du code LaTeX en un fichier PDF téléchargeable.</p></li>
+</ol>
+</section>
+<section id="prerequis">
+<h2>Prérequis<a class="headerlink" href="#prerequis" title="Link to this heading"></a></h2>
+<p>Avant d’utiliser l’application, assurez-vous d’avoir installé les dépendances suivantes :</p>
+<ul class="simple">
+<li><p><strong>Python 3.8 ou supérieur</strong></p></li>
+<li><p><strong>Streamlit</strong> : <cite>pip install streamlit</cite></p></li>
+<li><p><strong>Tesseract OCR</strong> : Installé sur votre système (voir <a class="reference external" href="https://github.com/tesseract-ocr/tesseract">Tesseract Installation Guide</a>).</p></li>
+<li><p><strong>pdf2image</strong> : <cite>pip install pdf2image</cite></p></li>
+<li><p><strong>pytesseract</strong> : <cite>pip install pytesseract</cite></p></li>
+<li><p><strong>LangChain</strong> : <cite>pip install langchain</cite></p></li>
+<li><p><strong>pdflatex</strong> : Installé sur votre système pour compiler les fichiers LaTeX.</p></li>
+</ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Clonez le dépôt du projet :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/BADR-BARBARA/CV-NORMALIZER.git
+<span class="nb">cd</span><span class="w"> </span>CV-NORMALIZER
+</pre></div>
+</div>
+</li>
+<li><p>Installez les dépendances Python :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p>Configurez Tesseract OCR :</p>
+<ul>
+<li><p>Assurez-vous que Tesseract est installé sur votre système.</p></li>
+<li><p>Définissez le chemin vers l’exécutable Tesseract dans le code :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pytesseract</span><span class="o">.</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">tesseract_cmd</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\Program Files\Tesseract-OCR\tesseract.exe&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Lancez l’application Streamlit :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlit<span class="w"> </span>run<span class="w"> </span>app.py
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="utilisation">
+<h2>Utilisation<a class="headerlink" href="#utilisation" title="Link to this heading"></a></h2>
+<section id="etape-1-telechargement-du-cv">
+<h3>Étape 1 : Téléchargement du CV<a class="headerlink" href="#etape-1-telechargement-du-cv" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Cliquez sur le bouton “Upload your PDF CV” pour télécharger un fichier PDF contenant votre CV.</p></li>
+</ul>
+</section>
+<section id="etape-2-extraction-et-nettoyage-du-texte">
+<h3>Étape 2 : Extraction et nettoyage du texte<a class="headerlink" href="#etape-2-extraction-et-nettoyage-du-texte" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>L’application extrait le texte du PDF et le nettoie automatiquement.</p></li>
+</ul>
+</section>
+<section id="etape-3-generation-du-json-structure">
+<h3>Étape 3 : Génération du JSON structuré<a class="headerlink" href="#etape-3-generation-du-json-structure" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Le texte extrait est converti en une structure JSON standardisée.</p></li>
+</ul>
+</section>
+<section id="etape-4-generation-du-code-latex">
+<h3>Étape 4 : Génération du code LaTeX<a class="headerlink" href="#etape-4-generation-du-code-latex" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Le JSON est utilisé pour remplir un modèle LaTeX prédéfini.</p></li>
+</ul>
+</section>
+<section id="etape-5-compilation-en-pdf">
+<h3>Étape 5 : Compilation en PDF<a class="headerlink" href="#etape-5-compilation-en-pdf" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Le code LaTeX est compilé en un fichier PDF, que vous pouvez télécharger.</p></li>
+</ul>
+</section>
+</section>
+<section id="structure-du-projet">
+<h2>Structure du Projet<a class="headerlink" href="#structure-du-projet" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cv-normalizer/
+├── app.py                  # Script principal de l&#39;application Streamlit
+├── TEMPLATE.tex            # Modèle LaTeX pour le CV
+├── EXAMPLE.tex             # Exemple de code LaTeX généré
+├── J_exa.json              # Exemple de JSON structuré
+├── requirements.txt        # Fichier des dépendances
+└── generated_files/        # Dossier contenant les fichiers générés (PDF, LaTeX, logs)
+</pre></div>
+</div>
+</section>
+<section id="personnalisation">
+<h2>Personnalisation<a class="headerlink" href="#personnalisation" title="Link to this heading"></a></h2>
+<section id="modifier-le-modele-latex">
+<h3>Modifier le modèle LaTeX<a class="headerlink" href="#modifier-le-modele-latex" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Vous pouvez personnaliser le modèle LaTeX en éditant le fichier <cite>TEMPLATE.tex</cite>.</p></li>
+</ul>
+</section>
+<section id="ajouter-des-sections-supplementaires">
+<h3>Ajouter des sections supplémentaires<a class="headerlink" href="#ajouter-des-sections-supplementaires" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Pour ajouter des sections supplémentaires au JSON ou au modèle LaTeX, modifiez les fichiers <cite>app.py</cite>, <cite>TEMPLATE.tex</cite>, et les prompts correspondants.</p></li>
+</ul>
+</section>
+</section>
+<section id="deploiement-sur-read-the-docs">
+<h2>Déploiement sur Read the Docs<a class="headerlink" href="#deploiement-sur-read-the-docs" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Créez un compte sur <a class="reference external" href="https://readthedocs.org/">Read the Docs</a>.</p></li>
+<li><p>Importez votre dépôt GitHub.</p></li>
+<li><p>Configurez les paramètres de build pour utiliser un fichier <cite>docs/conf.py</cite> et <cite>docs/index.rst</cite>.</p></li>
+<li><p>Assurez-vous que votre documentation est au format reStructuredText (<cite>.rst</cite>) ou Markdown (<cite>.md</cite>).</p></li>
+</ol>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>Le <strong>CV Normalizer</strong> est un outil puissant pour automatiser la création de CV professionnels. Grâce à cette documentation, vous pouvez facilement installer, utiliser et personnaliser l’application pour répondre à vos besoins spécifiques.</p>
+<p>Pour toute question ou contribution, n’hésitez pas à ouvrir une issue sur le dépôt GitHub.</p>
 <div class="toctree-wrapper compound">
 </div>
+</section>
 </section>
 
 
