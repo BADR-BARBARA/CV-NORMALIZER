@@ -56,3 +56,10 @@ Le **CV-NORMALIZER** est une application Streamlit qui permet aux utilisateurs d
    ```bash
 
       streamlit run app.py
+
+---
+
+## 📧 Contact
+
+- Pour toute question ou suggestion, contactez-moi à barbarabadr2003@gmail.com
+---      
