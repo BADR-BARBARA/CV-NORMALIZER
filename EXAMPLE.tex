@@ -1,0 +1,203 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+
+
+\usepackage{xcolor}
+\definecolor{accentTitle}{HTML}{0e6e55}
+\definecolor{accentText}{HTML}{0e6e55}
+\definecolor{accentLine}{HTML}{a16f0b}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+
+
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\footskip}{3.7pt}
+\raggedbottom
+\raggedright
+
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+
+\newcommand{\documentTitle}[2]{
+  \begin{center}
+    {\Huge\color{accentTitle} #1}
+    \vspace{10pt}
+    {\color{accentLine} \hrule}
+    \vspace{2pt}
+   
+    \footnotesize{#2}
+    \vspace{2pt}
+    {\color{accentLine} \hrule}
+  \end{center}
+}
+
+\newcommand{\documentFooter}[1]{
+  \setlength{\footskip}{10.25pt}
+  \fancyfoot[C]{\footnotesize #1}
+}
+
+
+\newcommand{\numberedPages}{
+  \documentFooter{\thepage/\pageref{LastPage}}
+}
+
+
+\titleformat{\section}{
+  \vspace{-5pt}
+  \color{accentText}
+  \raggedright\large\bfseries
+}{}{0em}{}[\color{accentLine}\titlerule]
+
+
+\newcommand{\tinysection}[1]{
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}
+  {\large{\bfseries\color{accentText}#1} {\color{accentLine} |}}
+}
+
+\newcommand{\heading}[2]{
+  \hspace{10pt}#1\hfill#2\\
+}
+
+
+\newcommand{\headingBf}[2]{
+  \heading{\textbf{#1}}{\textbf{#2}}
+}
+
+
+\newcommand{\headingIt}[2]{
+  \heading{\textit{#1}}{\textit{#2}}
+}
+
+
+\newenvironment{resume_list}{
+  \vspace{-7pt}
+  \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=30pt]
+}{
+  \end{itemize}
+  %\vspace{-2pt}
+}
+
+
+\newcommand{\itemTitle}[1]{
+  \item[] \underline{#1}\vspace{4pt}
+}
+
+
+\renewcommand\labelitemi{--}
+
+
+\begin{document}
+
+
+  \documentTitle{BADR BARBARA}{
+
+    \href{tel:+212701688856}{
+      \raisebox{-0.05\height} \faPhone\ +212701688856} ~ | ~
+    \href{mailto:barbarabadr2003@gmail.com}{
+      \raisebox{-0.15\height} \faEnvelope\ barbarabadr2003@gmail.com} ~ | ~
+    \href{https://linkedin.com/in/badrbarbara/}{
+      \raisebox{-0.15\height} \faLinkedin\ https://linkedin.com/in/badrbarbara/} ~ | ~
+    \href{https://github.com/badrbarbara}{
+      \raisebox{-0.15\height} \faGithub\ github.com/badrbarbara}
+  }
+
+
+  \tinysection{Profile}
+  My motivation, diligence, and independence are strengths | am eager to contribute to your team. | am confident that my awareness of upcoming challenges and my determination to overcome them will make me a valuable and effective member
+
+  \section{Skills}
+
+  \begin{multicols}{2}
+    \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=75pt]
+      \item[\textbf{c++}] intermediate level
+      \item[\textbf{java}]  intermediate level
+      \item[\textbf{python }]  intermediate level
+      \item[\textbf{CAD software}] catia; autocad
+
+    \end{itemize}
+  \end{multicols}
+
+  \section{Professional Experience}
+
+  \headingBf{Experience1:}{2014--2018}
+  \headingIt{HR manager-hollywood Video}{}
+  \begin{resume_list}
+    
+    \item Upskilled and train managers on best practice low level HR to allow
+them to take ownership and accountability of their times.
+    
+    \vspace{3pt}
+    
+    
+  \end{resume_list}
+
+
+    
+
+
+
+  \section{Education}
+
+  \headingBf{High national school of arts and crafts (ENSAM)}{2021--2026}
+  \headingIt{State engineering diploma}{}
+    \headingBf{lahcen el youssi high school}{2020--2021}
+  \headingIt{baccalaureate in mathematical sciences}{}
+  
+
+  \vspace{5pt}
+  
+
+ 
+
+
+  \section{Projects}
+
+  \headingBf{study of a machining unit to be implemented in an automated production system}{}
+  \begin{resume_list}
+    \item Machine for winding electric cables
+
+  \end{resume_list}
+
+
+ 
+  
+   \section{Languages}
+
+  \begin{multicols}{2}
+    \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=75pt]
+      \item[\textbf{Arabic}] Native language
+      \item[\textbf{French}] b2 level
+      \item[\textbf{English}] advanced
+      
+    \end{itemize}
+  \end{multicols}
+
+\end{document}

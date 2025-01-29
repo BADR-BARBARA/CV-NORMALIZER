@@ -1,0 +1,49 @@
+{
+  "Name": "Badr Barbara",
+  "Contact": {
+    "Email": "barbarabadr2003@gmail.com",
+    "Phone": "+212 701-688856",
+    "LinkedIn": "https://linkedin.com/in/badrbarbara/",
+    "GitHub": "http://github.com/badrbarbara"
+  },
+  "Profile": "My motivation, diligence, and independence are strengths. I am eager to contribute to your team. I am confident that my awareness of upcoming challenges and my determination to overcome them will make me a valuable and effective member.",
+  "Skills": {
+    "C++": "Intermediate level",
+    "Java": "Intermediate level",
+    "Python (Machine Learning)": "Intermediate level",
+    "CAD Software": "CATIA (Basic knowledge), AutoCAD (Basic knowledge)"
+  },
+  "Languages": {
+    "Arabic": "Native language",
+    "French": "B2 level",
+    "English": "Advanced"
+  },
+  "Professional_Experience": [
+    {
+      "Position": "HR Manager",
+      "Company": "Hollywood Video",
+      "Dates": "2014 - 2018",
+      "Description": "Upskilled and trained managers on best practices in low-level HR to allow them to take ownership and accountability of their teams."
+    }
+  ],
+  "Education": [
+    {
+      "Degree": "State Engineer Diploma",
+      "Institution": "High National School of Arts and Crafts (ENSAM)",
+      "Dates": "2021 - 2026"
+    },
+    {
+      "Degree": "Baccalaureate in Mathematical Sciences",
+      "Institution": "Lahcen El Youssi High School",
+      "Dates": "2020 - 2021"
+    }
+  ],
+  "Projects": [
+    {
+      "Name": "Study of a machining unit to be implemented in an automated production system",
+      "Description": "Machine for winding electric cables"
+    }
+  ],
+  "References": [],
+  "Hobbies": []
+}
