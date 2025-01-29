@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'test1'
-copyright = '2025, badr1'
-author = 'badr1'
+copyright = '2025, BARBARA BADR & ABOULCAID YASSIR'
+author = 'BARBARA BADR & ABOULCAID YASSIR'
 release = '01-17-2025'
 
 # -- General configuration ---------------------------------------------------
