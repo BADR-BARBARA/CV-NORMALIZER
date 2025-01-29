@@ -65,7 +65,7 @@ def generate_cv_pdf_from_latex(latex_code):
 
 
 
-# Streamlit app starts
+
 st.title("CV Normalizer")
 st.write("Upload your CV in PDF format, and we will generate a professional CV for you.")
 
